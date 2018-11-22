@@ -1,14 +1,13 @@
-
 public class MainPruebas {
 
 	public static void main(String[] args) {
 
 		String b1,b2,b3;
-		b1 = "elige un color su primo";
+		b1 = "elige un colors";
 		b2 = "ROJO";
 		b3 = "ASUL";
-		boolean color;
-		byte x;
+//		boolean color;
+		byte z = 6;
 		
 //		System.out.printf("%s",b1);
 //		System.out.printf("\n  1.- %s",b2);
@@ -20,11 +19,17 @@ public class MainPruebas {
 		
 		System.out.println();
 		
-		System.out.println(b2.equals(b3));
+//		System.out.println(b2.equals(b3));
+//		byte x;
+//		System.out.println("Introduce un byte");
+//		x = Teclado.leerByte();
+//		System.out.println(x);
 		
-		System.out.println("Introduce un byte");
-		x = Teclado.leerByte();
-		System.out.println(x);
+		Teclado.Comparacion(z, Teclado.ES.MAYOR);
+		
+		
+		
+		
 		
 	}
 
