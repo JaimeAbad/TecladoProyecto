@@ -95,20 +95,10 @@ public class Teclado {
 	public static boolean leerBoolean(String pregunta, String opcion1, String opcion2) {
 		boolean resultado = false;
 		byte opcion = 0;
-		boolean valido = false;
-		
-		do {
-			System.out.printf("%s\n  1.- %s\n  2.- %s",pregunta, opcion1, opcion2);
-			try {
-				opcion = keyboard.nextByte();
-				valido = true;
-			}catch(InputMismatchException e) {
-				System.out.println("Introduce un número válido");
-				keyboard.nextLine();
-			}
-		}while(opcion!=1 && opcion!=2 && !valido);
 		
 		
+		System.out.printf("%s\n  1.- %s\n  2.- %s",pregunta, opcion1, opcion2);
+		opcion = (byte) Rango(1, 2, Rango.AMBOS_INCLUIDOS);
 		
 		if(opcion == 1) {
 			resultado = true;
