@@ -34,7 +34,7 @@ public class Teclado {
 	public static char leerChar() {
 		char caracter;
 		
-		caracter = keyboard.next().charAt(0);
+		caracter = keyboard.nextLine().charAt(0);
 		
 		return caracter;
 	}
@@ -43,7 +43,7 @@ public class Teclado {
 		char caracter;
 		
 		System.out.println(mensaje);
-		caracter = keyboard.next().charAt(0);
+		caracter = leerChar();
 		
 		return caracter;
 	}
@@ -70,9 +70,7 @@ public class Teclado {
 		String cadena;
 		
 		System.out.println(mensaje);
-		do {
-			cadena = keyboard.nextLine();
-		}while(cadena.equals(""));
+		cadena = leerCadena();
 		
 		
 		return cadena;
@@ -175,19 +173,8 @@ public class Teclado {
 	/*1.2 esta segunda funcion hara lo mismo pero recibe ademas una cadena, la cual sera el mensaje que le mostraremos al usuario*/
 	public static byte leerByte(String mensaje) {
 		byte respuesta = 0;
-		boolean valido = false;
-		do {
-			System.out.println(mensaje);
-			try {
-				respuesta = keyboard.nextByte();
-				valido  = true;
-			}
-			catch(InputMismatchException e){
-				System.out.println("Introduce un número dentro del valor válido. [-128:127]");
-				limpiarBuffer();
-			}
-			
-		}while(!valido);
+		
+		respuesta = leerByte();
 		
 		
 		return respuesta;
@@ -217,19 +204,8 @@ public class Teclado {
 	/*1.2 esta segunda funcion hara lo mismo pero recibe ademas una cadena, la cual sera el mensaje que le mostraremos al usuario*/
 	public static int leerEntero(String mensaje) {
 		int respuesta = 0;
-		boolean valido = false;
-		do {
-			System.out.println(mensaje);
-			try {
-				respuesta = keyboard.nextInt();
-				valido  = true;
-			}
-			catch(InputMismatchException e){
-				System.out.println("Introduce un número dentro del valor válido. [-2.147.483.648:2.147.483.649]");
-				limpiarBuffer();
-			}
-			
-		}while(!valido);
+
+		respuesta = leerEntero();
 		
 		
 		return respuesta;
@@ -259,19 +235,8 @@ public class Teclado {
 	/*1.2 esta segunda funcion hara lo mismo pero recibe ademas una cadena, la cual sera el mensaje que le mostraremos al usuario*/
 	public static short leerShort(String mensaje) {
 		short respuesta = 0;
-		boolean valido = false;
-		do {
-			System.out.println(mensaje);
-			try {
-				respuesta = keyboard.nextShort();
-				valido  = true;
-			}
-			catch(InputMismatchException e){
-				System.out.println("Introduce un número dentro del valor válido. [-32.768:32.767]");
-				limpiarBuffer();
-			}
-			
-		}while(!valido);
+		
+		respuesta = leerShort();
 		
 		
 		return respuesta;
@@ -300,19 +265,8 @@ public class Teclado {
 	/*1.2 esta segunda funcion hara lo mismo pero recibe ademas una cadena, la cual sera el mensaje que le mostraremos al usuario*/
 	public static long leerLong(String mensaje) {
 		long respuesta = 0;
-		boolean valido = false;
-		do {
-			System.out.println(mensaje);
-			try {
-				respuesta = keyboard.nextLong();
-				valido  = true;
-			}
-			catch(InputMismatchException e){
-				System.out.println("Introduce un número dentro del valor válido. [-9*10^18:9*10^18]");
-				limpiarBuffer();
-			}
-			
-		}while(!valido);
+		
+		respuesta = leerLong();
 		
 		
 		return respuesta;
@@ -341,19 +295,8 @@ public class Teclado {
 	/*1.2 esta segunda funcion hara lo mismo pero recibe ademas una cadena, la cual sera el mensaje que le mostraremos al usuario*/
 	public static float leerFloat(String mensaje) {
 		float respuesta = 0;
-		boolean valido = false;
-		do {
-			System.out.println(mensaje);
-			try {
-				respuesta = keyboard.nextFloat();
-				valido  = true;
-			}
-			catch(InputMismatchException e){
-				System.out.println("Introduce un número dentro del valor válido. [-3,4*10^38:3,4*10^38]");
-				limpiarBuffer();
-			}
-			
-		}while(!valido);
+		
+		respuesta = leerFloat();
 		
 		
 		return respuesta;
@@ -382,19 +325,8 @@ public class Teclado {
 	/*1.2 esta segunda funcion hara lo mismo pero recibe ademas una cadena, la cual sera el mensaje que le mostraremos al usuario*/
 	public static double leerDouble(String mensaje) {
 		double respuesta = 0;
-		boolean valido = false;
-		do {
-			System.out.println(mensaje);
-			try {
-				respuesta = keyboard.nextDouble();
-				valido  = true;
-			}
-			catch(InputMismatchException e){
-				System.out.println("Introduce un número dentro del valor válido. [-1,79*10^308 a 1,79*10^308]");
-				limpiarBuffer();
-			}
-			
-		}while(!valido);
+		
+		respuesta = leerDouble();
 		
 		
 		return respuesta;
