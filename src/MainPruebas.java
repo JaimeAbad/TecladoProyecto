@@ -27,10 +27,13 @@ public class MainPruebas {
 		
 		Teclado.Comparacion(z, Teclado.ES.MAYOR);
 		
+//		b1 = Teclado.leerCadena();
+//		System.out.println(b1);
 		
+		char c;
 		
-		
-		
+		c = Teclado.leerChar();
+		System.out.println(c);
 	}
 
 }

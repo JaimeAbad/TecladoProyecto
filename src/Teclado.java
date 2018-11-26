@@ -34,7 +34,7 @@ public class Teclado {
 	public static char leerChar() {
 		char caracter;
 		
-		caracter = keyboard.nextLine().charAt(0);
+		caracter = keyboard.next().charAt(0);
 		
 		return caracter;
 	}
