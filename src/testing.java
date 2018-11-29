@@ -22,7 +22,7 @@ public class testing {
 //		double rangoAmbExc5, rangoAmbInc5, rangoMaxInc5, rangoMinInc5;
 //		rangoAmbExc5 = Teclado.Rango((double)10, (double)100,Teclado.Rango.AMBOS_EXCLUIDOS);
 		
-		char c,c2, c1;
+		char c,c2 = 0, c1;
 //		System.out.println("Introduce un caracter: ");
 //		c = Teclado.leerChar();
 //		System.out.println("Caracter-numero(Mostrara el codigo unicode en decimal del primer numero) Introduce un numero cualquiera : ");
@@ -53,7 +53,19 @@ public class testing {
 //			
 //			
 //		}while(!salir);
+		String s;
+		int n ;
+//		c = Teclado.leerChar("Introduce c: ");
+//		System.out.println(c);
+//		c1= Teclado.leerChar("Introduce c1: ");
+		
 
+		
+		n = Teclado.leerEntero("Entero :");
+		s = Teclado.leerCadena("Introduce la cadena: ");
+		System.out.println(s);
+		System.out.println(n);
+//		System.out.println(c1);
 	}
 
 }

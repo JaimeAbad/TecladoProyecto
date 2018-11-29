@@ -34,7 +34,7 @@ public class Teclado {
 	public static char leerChar() {
 		char caracter;
 		
-		caracter = keyboard.next().charAt(0);
+		caracter = keyboard.nextLine().charAt(0);
 		
 		return caracter;
 	}
@@ -152,6 +152,7 @@ public class Teclado {
 			}
 			catch(InputMismatchException e){
 				System.out.println("Introduce un número dentro del valor válido. [-128:127]");
+			}finally {
 				limpiarBuffer();
 			}
 			
@@ -164,6 +165,7 @@ public class Teclado {
 	public static byte leerByte(String mensaje) {
 		byte respuesta = 0;
 		
+		System.out.println(mensaje);
 		respuesta = leerByte();
 		
 		
@@ -183,6 +185,7 @@ public class Teclado {
 			}
 			catch(InputMismatchException e){
 				System.out.println("Introduce un número dentro del valor válido. [-2.147.483.648:2.147.483.649]");
+			}finally {
 				limpiarBuffer();
 			}
 			
@@ -195,6 +198,7 @@ public class Teclado {
 	public static int leerEntero(String mensaje) {
 		int respuesta = 0;
 
+		System.out.println(mensaje);
 		respuesta = leerEntero();
 		
 		
@@ -214,6 +218,7 @@ public class Teclado {
 			}
 			catch(InputMismatchException e){
 				System.out.println("Introduce un número dentro del valor válido. [-32.768:32.767]");
+			}finally {
 				limpiarBuffer();
 			}
 			
@@ -226,6 +231,7 @@ public class Teclado {
 	public static short leerShort(String mensaje) {
 		short respuesta = 0;
 		
+		System.out.println(mensaje);
 		respuesta = leerShort();
 		
 		
@@ -244,6 +250,7 @@ public class Teclado {
 			}
 			catch(InputMismatchException e){
 				System.out.println("Introduce un número dentro del valor válido. [-9*10^18:9*10^18]");
+			}finally {
 				limpiarBuffer();
 			}
 			
@@ -256,6 +263,7 @@ public class Teclado {
 	public static long leerLong(String mensaje) {
 		long respuesta = 0;
 		
+		System.out.println(mensaje);
 		respuesta = leerLong();
 		
 		
@@ -274,6 +282,7 @@ public class Teclado {
 			}
 			catch(InputMismatchException e){
 				System.out.println("Introduce un número dentro del valor válido. [-3,4*10^38:3,4*10^38]");
+			}finally {
 				limpiarBuffer();
 			}
 			
@@ -286,6 +295,7 @@ public class Teclado {
 	public static float leerFloat(String mensaje) {
 		float respuesta = 0;
 		
+		System.out.println(mensaje);
 		respuesta = leerFloat();
 		
 		
@@ -304,6 +314,7 @@ public class Teclado {
 			}
 			catch(InputMismatchException e){
 				System.out.println("Introduce un número dentro del valor válido. [-1,79*10^308 a 1,79*10^308]");
+			}finally {
 				limpiarBuffer();
 			}
 			
@@ -316,6 +327,7 @@ public class Teclado {
 	public static double leerDouble(String mensaje) {
 		double respuesta = 0;
 		
+		System.out.println(mensaje);
 		respuesta = leerDouble();
 		
 		
@@ -337,49 +349,28 @@ public class Teclado {
 		switch(es) {
 		case MAYOR:
 			do{
-				try {
-					System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
-					numero2 = leerByte();
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
-				}
-					
+				System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
+				numero2 = leerByte();	
 			}while(numero2<=numero);
 			
 			break;
 		case MENOR:
 			do{
-				try {
-					System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
-					numero2 = leerByte();
-					
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
-				}
+				System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
+				numero2 = leerByte();
 					
 			}while(numero2>=numero);
 			break;
 		case MAYOR_IGUAL:
 			do{
-				try {
-					System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
-					numero2 = leerByte();
-					
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
-				}
-					
+				System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
+				numero2 = leerByte();	
 			}while(numero2<numero);
 			break;
 		case MENOR_IGUAL:
 			do{
-				try {
-					System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
-					numero2 = leerByte();
-					
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
-				}
+				System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
+				numero2 = leerByte();
 					
 			}while(numero2>numero);
 			break;
@@ -395,51 +386,28 @@ public class Teclado {
 		switch(es) {
 		case MAYOR:
 			do{
-				try {
-					System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
-					numero2 = leerEntero();
-					
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
-				}
-					
+				System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
+				numero2 = leerEntero();	
 			}while(numero2<=numero);
 			
 			break;
 		case MENOR:
 			do{
-				try {
-					System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
-					numero2 = leerEntero();
-					
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
-				}
-					
+				System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
+				numero2 = leerEntero();	
 			}while(numero2>=numero);
 			break;
 		case MAYOR_IGUAL:
 			do{
-				try {
-					System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
-					numero2 = leerEntero();
-					
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
-				}
+				System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
+				numero2 = leerEntero();
 					
 			}while(numero2<numero);
 			break;
 		case MENOR_IGUAL:
 			do{
-				try {
-					System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
-					numero2 = leerEntero();
-					
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
-				}
-					
+				System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
+				numero2 = leerEntero();	
 			}while(numero2>numero);
 			break;
 			
@@ -454,50 +422,27 @@ public class Teclado {
 		switch(es) {
 		case MAYOR:
 			do{
-				try {
-					System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
-					numero2 = leerShort();
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
-				}
-					
+				System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
+				numero2 = leerShort();		
 			}while(numero2<=numero);
 			
 			break;
 		case MENOR:
 			do{
-				try {
-					System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
-					numero2 = leerShort();
-					
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
-				}
-					
+				System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
+				numero2 = leerShort();
 			}while(numero2>=numero);
 			break;
 		case MAYOR_IGUAL:
 			do{
-				try {
-					System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
-					numero2 = leerShort();
-					
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
-				}
-					
+				System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
+				numero2 = leerShort();	
 			}while(numero2<numero);
 			break;
 		case MENOR_IGUAL:
 			do{
-				try {
-					System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
-					numero2 = leerShort();
-					
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
-				}
-					
+				System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
+				numero2 = leerShort();	
 			}while(numero2>numero);
 			break;
 			
@@ -512,51 +457,27 @@ public class Teclado {
 		switch(es) {
 		case MAYOR:
 			do{
-				try {
-					System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
-					numero2 = leerLong();
-					
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
-				}
-					
+				System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
+				numero2 = leerLong();	
 			}while(numero2<=numero );
 			
 			break;
 		case MENOR:
 			do{
-				try {
-					System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
-					numero2 = leerLong();
-					
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
-				}
-					
+				System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
+				numero2 = leerLong();	
 			}while(numero2>=numero );
 			break;
 		case MAYOR_IGUAL:
 			do{
-				try {
-					System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
-					numero2 = leerLong();
-					
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
-				}
-					
+				System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
+				numero2 = leerLong();	
 			}while(numero2<numero );
 			break;
 		case MENOR_IGUAL:
 			do{
-				try {
-					System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
-					numero2 = leerLong();
-					
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
-				}
-					
+				System.out.printf("Introduzca un numero %s que el %d : ",es, numero);
+				numero2 = leerLong();
 			}while(numero2>numero );
 			break;
 			
@@ -571,49 +492,30 @@ public class Teclado {
 		switch(es) {
 		case MAYOR:
 			do{
-				try {
-					System.out.printf("Introduzca un numero %s que el %.2f : ",es, numero);
-					numero2 = leerFloat();
-					
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduzca un numero %s que el %.2f : ",es, numero);
-				}
+				System.out.printf("Introduzca un numero %s que el %.2f : ",es, numero);
+				numero2 = leerFloat();
 					
 			}while(numero2<=numero );
 			
 			break;
 		case MENOR:
 			do{
-				try {
-					System.out.printf("Introduzca un numero %s que el %.2f : ",es, numero);
-					numero2 = leerFloat();
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduzca un numero %s que el %.2f : ",es, numero);
-				}
+				System.out.printf("Introduzca un numero %s que el %.2f : ",es, numero);
+				numero2 = leerFloat();
 					
 			}while(numero2>=numero);
 			break;
 		case MAYOR_IGUAL:
 			do{
-				try {
-					System.out.printf("Introduzca un numero %s que el %.2f : ",es, numero);
-					numero2 = leerFloat();
-					
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduzca un numero %s que el %.2f : ",es, numero);
-				}
+				System.out.printf("Introduzca un numero %s que el %.2f : ",es, numero);
+				numero2 = leerFloat();
 					
 			}while(numero2<numero);
 			break;
 		case MENOR_IGUAL:
 			do{
-				try {
-					System.out.printf("Introduzca un numero %s que el %.2f : ",es, numero);
-					numero2 = leerFloat();
-					
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduzca un numero %s que el %.2f : ",es, numero);
-				}
+				System.out.printf("Introduzca un numero %s que el %.2f : ",es, numero);
+				numero2 = leerFloat();
 					
 			}while(numero2>numero);
 			break;
@@ -629,48 +531,29 @@ public class Teclado {
 		switch(es) {
 		case MAYOR:
 			do{
-				try {
-					System.out.printf("Introduzca un numero %s que el %.2f : ",es, numero);
-					numero2 = leerDouble();
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduzca un numero %s que el %.2f : ",es, numero);
-				}
+				System.out.printf("Introduzca un numero %s que el %.2f : ",es, numero);
+				numero2 = leerDouble();
 					
 			}while(numero2<=numero);
 			
 			break;
 		case MENOR:
 			do{
-				try {
-					System.out.printf("Introduzca un numero %s que el %.2f : ",es, numero);
-					numero2 = leerDouble();
-					
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduzca un numero %s que el %.2f : ",es, numero);
-				}
+				System.out.printf("Introduzca un numero %s que el %.2f : ",es, numero);
+				numero2 = leerDouble();
 					
 			}while(numero2>=numero);
 			break;
 		case MAYOR_IGUAL:
 			do{
-				try {
-					System.out.printf("Introduzca un numero %s que el %.2f : ",es, numero);
-					numero2 = leerDouble();
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduzca un numero %s que el %.2f : ",es, numero);
-				}
-					
+				System.out.printf("Introduzca un numero %s que el %.2f : ",es, numero);
+				numero2 = leerDouble();		
 			}while(numero2<numero);
 			break;
 		case MENOR_IGUAL:
 			do{
-				try {
-					System.out.printf("Introduzca un numero %s que el %.2f : ",es, numero);
-					numero2 = leerDouble();
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduzca un numero %s que el %.2f : ",es, numero);
-				}
-					
+				System.out.printf("Introduzca un numero %s que el %.2f : ",es, numero);
+				numero2 = leerDouble();		
 			}while(numero2>numero);
 			break;
 			
@@ -700,47 +583,27 @@ public class Teclado {
 		case AMBOS_INCLUIDOS:
 			
 			do {
-				try {
-					System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
-					numero = leerByte();	
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
-				}
-				
+				System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
+				numero = leerByte();
 			}while(numero < lim_menor || numero > lim_mayor);
 
 			break;
 		case AMBOS_EXCLUIDOS:
 			do {
-				try {
-					System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
-					numero = leerByte();	
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
-				}
-				
+				System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
+				numero = leerByte();
 			}while(numero<=lim_menor || numero>=lim_mayor);
 			break;
 		case MINIMO_INCLUIDO:
 			do {
-				try {
-					System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
-					numero = leerByte();	
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
-				}
-				
+				System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
+				numero = leerByte();
 			}while(numero<lim_menor || numero>=lim_mayor);
 			break;
 		case MAXIMO_INCLUIDO:
 			do {
-				try {
-					System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
-					numero = leerByte();	
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
-				}
-				
+				System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
+				numero = leerByte();
 			}while(numero<=lim_menor || numero>lim_mayor);
 			break;
 		}
@@ -759,47 +622,27 @@ public class Teclado {
 		case AMBOS_INCLUIDOS:
 			
 			do {
-				try {
-					System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
-					numero = leerEntero();	
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
-				}
-				
+				System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
+				numero = leerEntero();
 			}while(numero < lim_menor || numero > lim_mayor);
 
 			break;
 		case AMBOS_EXCLUIDOS:
 			do {
-				try {
-					System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
-					numero = leerEntero();	
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
-				}
-				
+				System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
+				numero = leerEntero();
 			}while(numero<=lim_menor || numero>=lim_mayor);
 			break;
 		case MINIMO_INCLUIDO:
 			do {
-				try {
-					System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
-					numero = leerEntero();	
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
-				}
-				
+				System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
+				numero = leerEntero();
 			}while(numero<lim_menor || numero>=lim_mayor);
 			break;
 		case MAXIMO_INCLUIDO:
 			do {
-				try {
-					System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
-					numero = leerEntero();	
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
-				}
-				
+				System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
+				numero = leerEntero();
 			}while(numero<=lim_menor || numero>lim_mayor);
 			break;
 		}
@@ -818,46 +661,27 @@ public class Teclado {
 		case AMBOS_INCLUIDOS:
 			
 			do {
-				try {
-					System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
-					numero = leerShort();	
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
-				}
-				
+				System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
+				numero = leerShort();
 			}while(numero < lim_menor || numero > lim_mayor);
 
 			break;
 		case AMBOS_EXCLUIDOS:
 			do {
-				try {
-					System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
-					numero = leerShort();	
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
-				}
-				
+				System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
+				numero = leerShort();
 			}while(numero<=lim_menor || numero>=lim_mayor);
 			break;
 		case MINIMO_INCLUIDO:
 			do {
-				try {
-					System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
-					numero = leerShort();	
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
-				}
-				
+				System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
+				numero = leerShort();
 			}while(numero<lim_menor || numero>=lim_mayor);
 			break;
 		case MAXIMO_INCLUIDO:
 			do {
-				try {
-					System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
-					numero = leerShort();	
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
-				}
+				System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
+				numero = leerShort();
 				
 			}while(numero<=lim_menor || numero>lim_mayor);
 			break;
@@ -877,47 +701,27 @@ public class Teclado {
 		case AMBOS_INCLUIDOS:
 			
 			do {
-				try {
-					System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
-					numero = leerLong();	
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
-				}
-				
+				System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
+				numero = leerLong();	
 			}while(numero < lim_menor || numero > lim_mayor);
 
 			break;
 		case AMBOS_EXCLUIDOS:
 			do {
-				try {
-					System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
-					numero = leerLong();	
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
-				}
-				
+				System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
+				numero = leerLong();
 			}while(numero<=lim_menor || numero>=lim_mayor);
 			break;
 		case MINIMO_INCLUIDO:
 			do {
-				try {
-					System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
-					numero = leerLong();	
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
-				}
-				
+				System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
+				numero = leerLong();
 			}while(numero<lim_menor || numero>=lim_mayor);
 			break;
 		case MAXIMO_INCLUIDO:
 			do {
-				try {
-					System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
-					numero = leerLong();	
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
-				}
-				
+				System.out.printf("Introduce un numero entre %d y %d , %s : ", lim_menor, lim_mayor, entre);
+				numero = leerLong();
 			}while(numero<=lim_menor || numero>lim_mayor);
 			break;
 		}
@@ -936,47 +740,27 @@ public class Teclado {
 		case AMBOS_INCLUIDOS:
 			
 			do {
-				try {
-					System.out.printf("Introduce un numero entre %.2f y %.2f , %s : ", lim_menor, lim_mayor, entre);
-					numero = leerFloat();	
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduce un numero entre %.2f y %.2f , %s : ", lim_menor, lim_mayor, entre);
-				}
-				
+				System.out.printf("Introduce un numero entre %.2f y %.2f , %s : ", lim_menor, lim_mayor, entre);
+				numero = leerFloat();
 			}while(numero < lim_menor || numero > lim_mayor);
 
 			break;
 		case AMBOS_EXCLUIDOS:
 			do {
-				try {
-					System.out.printf("Introduce un numero entre %.2f y %.2f , %s : ", lim_menor, lim_mayor, entre);
-					numero = leerFloat();	
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduce un numero entre %.2f y %.2f , %s : ", lim_menor, lim_mayor, entre);
-				}
-				
+				System.out.printf("Introduce un numero entre %.2f y %.2f , %s : ", lim_menor, lim_mayor, entre);
+				numero = leerFloat();
 			}while(numero<=lim_menor || numero>=lim_mayor);
 			break;
 		case MINIMO_INCLUIDO:
 			do {
-				try {
-					System.out.printf("Introduce un numero entre %.2f y %.2f , %s : ", lim_menor, lim_mayor, entre);
-					numero = leerFloat();	
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduce un numero entre %.2f y %.2f , %s : ", lim_menor, lim_mayor, entre);
-				}
-				
+				System.out.printf("Introduce un numero entre %.2f y %.2f , %s : ", lim_menor, lim_mayor, entre);
+				numero = leerFloat();
 			}while(numero<lim_menor || numero>=lim_mayor);
 			break;
 		case MAXIMO_INCLUIDO:
 			do {
-				try {
-					System.out.printf("Introduce un numero entre %.2f y %.2f , %s : ", lim_menor, lim_mayor, entre);
-					numero = leerFloat();	
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduce un numero entre %.2f y %.2f , %s : ", lim_menor, lim_mayor, entre);
-				}
-				
+				System.out.printf("Introduce un numero entre %.2f y %.2f , %s : ", lim_menor, lim_mayor, entre);
+				numero = leerFloat();
 			}while(numero<=lim_menor || numero>lim_mayor);
 			break;
 		}
@@ -995,47 +779,27 @@ public class Teclado {
 		case AMBOS_INCLUIDOS:
 			
 			do {
-				try {
-					System.out.printf("Introduce un numero entre %.2f y %.2f , %s : ", lim_menor, lim_mayor, entre);
-					numero = leerDouble();	
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduce un numero entre %.2f y %.2f , %s : ", lim_menor, lim_mayor, entre);
-				}
-				
+				System.out.printf("Introduce un numero entre %.2f y %.2f , %s : ", lim_menor, lim_mayor, entre);
+				numero = leerDouble();
 			}while(numero < lim_menor || numero > lim_mayor);
 
 			break;
 		case AMBOS_EXCLUIDOS:
 			do {
-				try {
-					System.out.printf("Introduce un numero entre %.2f y %.2f , %s : ", lim_menor, lim_mayor, entre);
-					numero = leerDouble();	
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduce un numero entre %.2f y %.2f , %s : ", lim_menor, lim_mayor, entre);
-				}
-				
+				System.out.printf("Introduce un numero entre %.2f y %.2f , %s : ", lim_menor, lim_mayor, entre);
+				numero = leerDouble();
 			}while(numero<=lim_menor || numero>=lim_mayor);
 			break;
 		case MINIMO_INCLUIDO:
 			do {
-				try {
-					System.out.printf("Introduce un numero entre %.2f y %.2f , %s : ", lim_menor, lim_mayor, entre);
-					numero = leerDouble();	
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduce un numero entre %.2f y %.2f , %s : ", lim_menor, lim_mayor, entre);
-				}
-				
+				System.out.printf("Introduce un numero entre %.2f y %.2f , %s : ", lim_menor, lim_mayor, entre);
+				numero = leerDouble();
 			}while(numero<lim_menor || numero>=lim_mayor);
 			break;
 		case MAXIMO_INCLUIDO:
 			do {
-				try {
-					System.out.printf("Introduce un numero entre %.2f y %.2f , %s : ", lim_menor, lim_mayor, entre);
-					numero = leerDouble();	
-				}catch(InputMismatchException e) {
-					System.out.printf("Introduce un numero entre %.2f y %.2f , %s : ", lim_menor, lim_mayor, entre);
-				}
-				
+				System.out.printf("Introduce un numero entre %.2f y %.2f , %s : ", lim_menor, lim_mayor, entre);
+				numero = leerDouble();
 			}while(numero<=lim_menor || numero>lim_mayor);
 			break;
 		}
