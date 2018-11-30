@@ -93,40 +93,33 @@ public class Teclado {
 	 *	2.1.2 Controlara que el valor de la opcion que introduce el usuario sea valido, tanto siendo un numero como estando este dentro de los que se piden (en este caso 1 ó 2)
 	 *	2.1.3 Si el valor que introduce el usuario no es valido le mostramos un mensaje de error y volvemos a pedirle el dato hasta que lo introduzca correctamente*/
 	public static boolean leerBoolean(String pregunta, String opcion1, String opcion2) {
-		boolean resultado = false;
-		byte opcion = 0;
+		byte opcion;
 		
 		
 		System.out.printf("%s\n  1.- %s\n  2.- %s",pregunta, opcion1, opcion2);
 		opcion = (byte) Rango(1, 2, Rango.AMBOS_INCLUIDOS);
 		
-		if(opcion == 1) {
-			resultado = true;
-		}
-		else {
-			resultado = false;
-		}
 		
-		return resultado;
+		return opcion == 1;
 	}
 
 	/*2.2 esta funcion recibe unicamente una cadena(que sera la pregunta que se le hara al usuario) y devuelve un booleano (que sera true o false dependiendo de la respuesta que del el usuario, puede ser s/S ó nN, si es s/S el valor guardado y devuelto sera true, en cambio si es n/N el valor guardado y devuelto sera false)
 	 *	2.2.1 Controlaremos que la respuesta del usuario sea igual a s/S o a n/N y si el valor que introduce el usuario no es valido le mostramos un mensaje de error y volvemos a pedirle el dato hasta que lo introduzca correctamente*/
 	public static boolean leerBoolean(String pregunta) {
-		String respuesta; 
+		char respuesta; 
 		
 		do {
 			System.out.printf("%s (s/n): ", pregunta);
-			respuesta = leerCadena().toLowerCase();
-			if(!respuesta.equals("s") && !respuesta.equals("n")) {
+			respuesta = Character.toLowerCase(leerChar());
+			if(respuesta != 's' && respuesta != 'n') {
 				System.out.printf("El valor introducido no es válido, introduce \"s\" ó \"n\" ");
 			}
 			
-		}while(!respuesta.equals("s") && !respuesta.equals("n"));
+		}while(respuesta != 's'&& respuesta != 'n');
 		
 		
 		//resultado=(respuesta=="s")?true:false; otra opcion
-		return respuesta.equals("s");
+		return respuesta == 's';
 	}
 	
 	
