@@ -1,10 +1,11 @@
 import java.util.InputMismatchException;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Teclado {
 	//declaracion del teclado estatico para poder usarlo en cada funcion
 	static Scanner keyboard = new Scanner(System.in);
-
+	static Random rnd = new Random();
 	
 	
 	public static enum ES{
@@ -800,8 +801,38 @@ public class Teclado {
 		return numero;
 	}
 	
+
+//GENERAR ALEATORIO ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	
+	//esta funcion genera un aleatorio entre 1 y el numero que introduzca el usuario
+	// si por ejemplo queremos tirar un dado, la variable sera un 6 y se generara un numero entre 1 y 6
+	public static int Random(int numero) {
+		int aleatorio;
+		
+		aleatorio = rnd.nextInt(numero) + 1;
+		
+		return aleatorio;
+	}
 	
+	//esta funcion genera un aleatorio entre el rango que introduzca el usuario
+	public static int Random(int menor, int mayor) {
+		int aleatorio;
+			
+		aleatorio = rnd.nextInt(mayor - menor + 1) + menor;
+			
+		return aleatorio;
+	}
+
+	//genera un numero booleano, si es true devuelve una cosa y si es false otra, las opciones las elige el usuario
+	public static String Random(String opcion1, String opcion2) {
+		boolean option;
+		String resultado;
+		
+		option = rnd.nextBoolean();
+		resultado =  option ? opcion1:opcion2;
+		
+		return resultado;
+	}
 	
 	
 }

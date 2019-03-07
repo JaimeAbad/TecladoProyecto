@@ -32,9 +32,9 @@ public class MainPruebas {
 		
 		
 		do {
-			System.out.println("MENU -------------------------------");
+			System.out.println("\nMENU -------------------------------");
 			System.out.printf("1. Leer Caracter \n2. Leer Cadena \n3. Leer Booleano Caracter"
-					+ " \n4. Leer Booleano Numero \n5. Leer Numero \n6. Limite \n7. Rango \n8. Salir");
+					+ " \n4. Leer Booleano Numero \n5. Leer Numero \n6. Limite \n7. Rango \n8. Salir\n");
 			opcion = Teclado.leerByte();
 			
 			switch(opcion) {
