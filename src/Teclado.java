@@ -806,10 +806,10 @@ public class Teclado {
 	
 	//esta funcion genera un aleatorio entre 1 y el numero que introduzca el usuario
 	// si por ejemplo queremos tirar un dado, la variable sera un 6 y se generara un numero entre 1 y 6
-	public static int Random(int numero) {
+	public static int Random(int entre1YEsteNumero) {
 		int aleatorio;
 		
-		aleatorio = rnd.nextInt(numero) + 1;
+		aleatorio = rnd.nextInt(entre1YEsteNumero) + 1;
 		
 		return aleatorio;
 	}
